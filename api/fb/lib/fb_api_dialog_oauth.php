@@ -23,6 +23,7 @@ class ApiDialogOauth
       throw new Exception(self::ADO_REQUIRED_REDIRECT_URI);
     }
     $apiParams['response_type'] = $params->getResponseType();
+    $apiParams['scope'] = $params->getScope();
     $apiParams = array_filter($apiParams);
 
     $uri = self::API_URI . '?' . http_build_query($apiParams);
